@@ -22,8 +22,11 @@ export const SandboxedRoute = ({url, data, prefix, route, children, key, storage
             <Sandbox key={key || url} storage={storage} recordName={recordName}>
                 <Rescope bind={recordName}>
                     <DataProxy
-                        // prefix data with '$root.'
-                        data={prefixData(data)}
+                        // add $route binding and prefix data with '$root.'
+                        data={prefixData({
+                            $route: { bind: '$route' },
+                            ...data
+                        })}
                     >
                         {children}
                     </DataProxy>
