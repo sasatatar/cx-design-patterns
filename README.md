@@ -7,3 +7,4 @@ You will find here examples for some good, as well as some bad practices in CxJS
 * [lookupFieldGenerator function](examples/lookup-field-generator/index.md)
 * [SandboxedRoute component](examples/sandboxed-route/index.md)
 * [columnBuilder utility](examples/column-builder/index.md)
+* [Containing logic using ContentPlaceholder](examples/containing-logic/index.md)
