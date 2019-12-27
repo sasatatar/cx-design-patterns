@@ -174,4 +174,15 @@ export const lookupFieldGenerator = (configurator) => createFunctionalComponent(
         </cx>
     );
 });
+
+
+// Utility function
+function pruneUndefinedKeys(x) {
+    let result = {};
+    for (let key in x) {
+        if (x[key] !== undefined)
+            result[key] = x[key];
+    }
+    return result;
+}
 ```

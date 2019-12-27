@@ -1,7 +1,6 @@
 import { bind, computable, Controller, createFunctionalComponent, tpl } from 'cx/ui';
 import { isFunction, parseStyle } from "cx/util";
 import { Icon, LabeledContainer, LookupField, Restate } from 'cx/widgets';
-import { pruneUndefinedKeys } from "../../util/pruneUndefinedKeys";
 
 /**
  * lookupFieldGenerator is used to encapsulate logic for loading options,
@@ -156,3 +155,12 @@ export const lookupFieldGenerator = (configurator) => createFunctionalComponent(
         </cx>
     );
 });
+
+function pruneUndefinedKeys(x) {
+    let result = {};
+    for (let key in x) {
+        if (x[key] !== undefined)
+            result[key] = x[key];
+    }
+    return result;
+}
